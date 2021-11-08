@@ -1,0 +1,35 @@
+﻿@page
+@using AzureContainerApps.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<body>
+    <h4>Customers</h4>
+    <hr/>
+    <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+            <tr>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+                <th class="text-center">Company Name</th>
+                <th class="text-center">Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+             @foreach (Customer customer in Model.Customers)
+             {
+                <tr>
+                    <td>@customer.FirstName</td>
+                    <td>@customer.LastName</td>
+                    <td>@customer.CompanyName</td>
+                    <td>@customer.EmailAddress</td>
+                </tr>
+            }
+
+        </tbody>
+        
+        
+    </table>
+</body>
